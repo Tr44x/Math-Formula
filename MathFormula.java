@@ -4,7 +4,7 @@ public class MathFormula extends Formula{
 
 	Scanner sc;
 	int choice,luas;
-	String exit = "666";
+	String exit = "0";
 
 	public static void main(String[] args) {
 		MathFormula mf = new MathFormula();
@@ -21,10 +21,10 @@ public class MathFormula extends Formula{
 		System.out.println("4. Layang - Layang");
 		System.out.println("5. Jajar Genjang");
 		System.out.print("Pilihan Bangun Datar : ");
-		choice = sc.nextInt();
 	}
 
 	public void runChoice() {
+		choice = sc.nextInt();
 		switch(choice) {
 		case 1:
 			System.out.println("===Persegi===");
@@ -80,7 +80,7 @@ public class MathFormula extends Formula{
 	public void exit() {
 			System.out.println("================");
 			System.out.println("Ketik \"Selesai\" untuk mengakhiri program!");
-			System.out.print("Disini : ");
+			System.out.print("Ketik : ");
 			exit = sc.next();
 			if (exit.equalsIgnoreCase("selesai")) {
 				System.out.println("================");
@@ -92,5 +92,21 @@ public class MathFormula extends Formula{
 				menu();
 				runChoice();
 			}
+	}
+
+	public void testProgram() {
+		menu();
+		System.out.println("1");
+		System.out.println("===Persegi===");
+		System.out.println("Masukan sisi : 5");
+		luas = super.Persegi(5);
+		System.out.println("Luas Persegi adalah " + luas);
+		System.out.println("================");
+		System.out.println("Ketik \"Selesai\" untuk mengakhiri program!");
+		System.out.println("Ketik : selesai");
+		System.out.println("================");
+		System.out.println("Program Berakhir");
+		System.out.println("================");
+		System.exit(0);
 	}
 }
